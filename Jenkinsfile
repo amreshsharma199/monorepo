@@ -6,9 +6,9 @@ pipeline {
     IMAGE_PREFIX = 'amreshsharma199'
   }
 
-  options {
-    skipDefaultCheckout true
-  }
+  // options {
+  //   skipDefaultCheckout true
+  // }
 
   stages {
     stage('Checkout Code') {
