@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'docker:24.0.7-dind'  // Alpine based Docker image with Docker daemon
+      image 'docker:24.0.7'
+      // image 'docker:24.0.7-dind'  // Alpine based Docker image with Docker daemon
       args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
     }
   }
