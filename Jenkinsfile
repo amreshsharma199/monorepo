@@ -12,7 +12,7 @@ pipeline {
 
   stages {
     stage('Checkout Code') {
-      agent { label 'jenkinsslvae' }
+      agent { label 'jenkinsslave' }
       steps {
         checkout scm
         script {
@@ -22,7 +22,7 @@ pipeline {
     }
 
     stage('Detect Changed App') {
-      agent { label 'master' }
+      agent { label 'jenkinsslave' }
       steps {
         script {
           def diff = sh(script: "git diff --name-only origin/${BRANCH}~1 origin/${BRANCH}", returnStdout: true).trim()
