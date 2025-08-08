@@ -137,7 +137,7 @@ pipeline {
       echo "✅ Build and deployment of ${APP} to ${BRANCH} successful!"
     }
   }
-}
+// }
 
 
 // pipeline {
