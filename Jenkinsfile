@@ -12,7 +12,7 @@ pipeline {
 
   stages {
     stage('Checkout Code') {
-      agent { label 'master' }
+      agent { label 'jenkinsslvae' }
       steps {
         checkout scm
         script {
