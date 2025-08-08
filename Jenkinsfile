@@ -73,18 +73,18 @@ pipeline {
     //   }
     // }
 
-    // stage('Build Docker Image') {
-    //   when {
-    //     expression { return env.APP != null }
-    //   }
-    //   steps {
-    //     dir("${APP}") {
-    //       script {
-    //         sh "docker build -t ${IMAGE_PREFIX}/${APP}:${BRANCH}-${BUILD_NUMBER} ."
-    //       }
-    //     }
-    //   }
-    // }
+    stage('Build Docker Image') {
+      when {
+        expression { return env.APP != null }
+      }
+      steps {
+        dir("${APP}") {
+          script {
+            sh "docker build -t ${IMAGE_PREFIX}/${APP}:${BRANCH}-${BUILD_NUMBER} ."
+          }
+        }
+      }
+    }
 
     stage('Push to Registry') {
       // when {
