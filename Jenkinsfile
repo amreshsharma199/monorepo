@@ -25,6 +25,8 @@ pipeline {
       agent { label 'jenkinsslave' }
       steps {
         script {
+          echo "Branch = ${BRANCH_NAME}"
+
           def diff = sh(script: "git diff --name-only origin/${BRANCH}~1 origin/${BRANCH}", returnStdout: true).trim()
           echo "Changed files:\n${diff}"
 
